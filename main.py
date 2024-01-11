@@ -66,3 +66,4 @@ async def plugin():
 @app.get("/openapi.yaml")
 async def serve_openapi_yaml():
     return FileResponse(os.path.join('.', 'openapi.yaml'), media_type='text/yaml')
+
