@@ -1,0 +1,16 @@
+{
+  "schema_version": "v1",
+  "name_for_human": "Alicloud user information",
+  "name_for_model": "AlicloudUserInfo",
+  "description_for_human": "Get cloud information for a given account.",
+  "description_for_model": "Get cloud information for a given account. Always pass in the date as a list. If a range of dates is given, call the request with the dates as a list. The date format is always year and then month. Use calculator to perform all calculations.",
+  "auth": {
+    "type": "none"
+  },
+  "api": {
+    "type": "openapi",
+    "url": "http://127.0.0.1:8000/openapi.yaml"
+  },
+  "contact_email": "support@example.com",
+  "legal_info_url": "http://127.0.0.1:8000"
+}

@@ -1,0 +1,37 @@
+openapi: 3.0.1
+info:
+  title: Alicloud User Information
+  description: Get cloud information for a given account.
+  version: "v1"
+servers:
+  - url: http://127.0.0.1:8000
+paths:
+  /alicloud:
+    get:
+      operationId: getUsageData
+      summary: Retrieves the usage information for a given account.
+      parameters:
+        - in: query
+          name: date
+          schema:
+            type: list
+          description: The date of the account to get a quote for. The date is always in the year-month format.
+
+      responses:
+        "200":
+          description: OK
+
+  /breakdown:
+    get:
+      operationId: getCloudSpendingBreakdown
+      summary: Retrieves the cloud spending breakdown for a given account.
+      parameters:
+        - in: query
+          name: date
+          schema:
+            type: list
+          description: The date of the account to get a quote for. The date is always in the year-month format.
+
+      responses:
+        "200":
+          description: OK
