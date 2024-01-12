@@ -24,7 +24,6 @@ async def alibaba(request: Request):
     cleaned_date = input_date.strip("[]")
     result_date = ast.literal_eval(input_date)
     print(result_date)
-    print(type(''.join(date[0])))
     print(os.environ.get('ACCESS_KEY'))
     response = requests.post(
         "https://binaryowl-dev.materia-logic.com/api/alicloud/reseller-bill-chatbot",
@@ -35,7 +34,6 @@ async def alibaba(request: Request):
     data = response.json()['data']
     all_data = []
     for item in data:
-        print(item)
         response_data = {}
         response_data['originalCost'] = item['originalCost']
         response_data['discount'] = item['discount']
@@ -68,5 +66,5 @@ async def plugin():
 async def serve_openapi_yaml():
     return FileResponse(os.path.join('.', 'openapi.yaml'), media_type='text/yaml')
 
-if __name__ == '__main__':
-    uvicorn.run(app, host='0.0.0.0', port=5000)
+# if __name__ == '__main__':
+#     uvicorn.run(app, host='0.0.0.0', port=5000)
