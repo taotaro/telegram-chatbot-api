@@ -30,7 +30,7 @@ async def alibaba(request: Request):
         json={"billing_cycle_list": result_date, "access_key": os.environ.get('ACCESS_KEY') },
         # params=date,
     )
-    # print(response.json())
+    print(response.json())
     data = response.json()['data']
     all_data = []
     for item in data:
