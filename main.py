@@ -25,9 +25,10 @@ async def alibaba(request: Request):
     result_date = ast.literal_eval(input_date)
     print(result_date)
     print(type(''.join(date[0])))
+    print(os.environ.get('ACCESS_KEY'))
     response = requests.post(
         "https://binaryowl-dev.materia-logic.com/api/alicloud/reseller-bill-chatbot",
-        json={"billing_cycle_list": result_date, "access_key": os.environ.get('ACCESS_KEY') },
+        json={"billing_cycle_list": result_date, "access_key": os.environ.get('ACCESS_KEY')},
         # params=date,
     )
     print(response.json())
