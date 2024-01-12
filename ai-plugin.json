@@ -3,13 +3,13 @@
   "name_for_human": "Alicloud user information",
   "name_for_model": "AlicloudUserInfo",
   "description_for_human": "Get cloud information for a given account.",
-  "description_for_model": "Get cloud information for a given account. Always pass the url in string format as one string. Always convert url from dictionary to single string. Only pass the url string. Always pass in the date as a list. If a range of dates is given, call the request with the dates as a list. The date format is always year and then month. Use calculator to perform all calculations.",
+  "description_for_model": "Get cloud information for a given account. Always pass just the url string to requests_get. Date is always in the format year-month. Always pass in the date as a list. If a range of dates is given, call the request with the dates as a list. Use calculator to perform all calculations.",
   "auth": {
     "type": "none"
   },
   "api": {
     "type": "openapi",
-    "url": "https://telegram-chatbot-api.vercel.app/openapi.yaml"
+    "url": "http://127.0.0.1:8000/openapi.yaml"
   },
   "contact_email": "support@example.com",
   "legal_info_url": "http://127.0.0.1:8000"

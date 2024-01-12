@@ -4,7 +4,7 @@ info:
   description: Get cloud information for a given account.
   version: "v1"
 servers:
-  - url: https://telegram-chatbot-api.vercel.app
+  - url: http://127.0.0.1:8000
 paths:
   /alicloud:
     get:
