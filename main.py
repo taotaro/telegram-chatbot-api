@@ -55,9 +55,16 @@ async def alibaba_breakdown(request: Request):
     )
     data = response.json()['data'][0]['item']
     all_data = []
-    for item in data:
-        all_data.append({'product name': item['productName'], 'cost': item['amount']})
+    for i in range(len(data)):
+        product_detail = data[i]['item']
+        
+        for item in product_detail:
+            all_data.append({'product name': item['productName'], 'cost': item['amount']})
+    # all_data = []
+    # for item in data:
+    #     all_data.append({'product name': item['productName'], 'cost': item['amount']})
     return all_data
+
 @app.get("/.well-known/ai-plugin.json")
 async def plugin():
     return FileResponse(os.path.join('.', 'ai-plugin.json'), media_type='application/json')
