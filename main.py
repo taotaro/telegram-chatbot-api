@@ -53,11 +53,10 @@ async def alibaba_breakdown(request: Request):
         "https://binaryowl-dev.materia-logic.com/api/alicloud/reseller-bill-chatbot",
         json={"billing_cycle_list": result_date, "access_key": os.environ.get('ACCESS_KEY') },
     )
-    data = response.json()['data'][0]['item']
+    data = response.json()['data']
     all_data = []
     for i in range(len(data)):
         product_detail = data[i]['item']
-        
         for item in product_detail:
             all_data.append({'product name': item['productName'], 'cost': item['amount']})
     # all_data = []
