@@ -59,10 +59,19 @@ async def alibaba_breakdown(request: Request):
         product_detail = data[i]['item']
         for item in product_detail:
             all_data.append({'product name': item['productName'], 'cost': item['amount']})
+    total_costs = {}
+    for entry in all_data:
+        product_name = entry['product name']
+        cost = entry['cost']
+        if product_name in total_costs:
+            total_costs[product_name] += cost
+        else:
+            total_costs[product_name] = cost
+
     # all_data = []
     # for item in data:
     #     all_data.append({'product name': item['productName'], 'cost': item['amount']})
-    return all_data
+    return total_costs
 
 @app.get("/.well-known/ai-plugin.json")
 async def plugin():
