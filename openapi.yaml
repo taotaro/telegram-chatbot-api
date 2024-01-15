@@ -9,7 +9,7 @@ paths:
   /alicloud:
     get:
       operationId: getUsageData
-      summary: Retrieves the usage information for a given account.
+      summary: Retrieves the usage information or spending for a given account.
       parameters:
         - in: query
           name: date
@@ -24,7 +24,7 @@ paths:
   /breakdown:
     get:
       operationId: getCloudSpendingBreakdown
-      summary: Retrieves the cloud spending breakdown for a given account.
+      summary: Retrieves the cloud spending breakdown or breakdown for a given account.
       parameters:
         - in: query
           name: date
